@@ -115,3 +115,7 @@ q
 AAppListaDeCompras/Libraries/Converters/TextSharedListConverter.cs,1\5\15a018c08452c6e6e4be0582f1dd8b0bc9aa368e
 ~
 NAppListaDeCompras/Libraries/Converters/TextTotalPriceOfItensInCartConverter.cs,4\a\4a256f460ff0a513d817cad8266d7e73016f42e5
+g
+7AppListaDeCompras/Views/Popups/ListToBuySharedPage.xaml,7\1\7102270b47aa39e6fa88afe2f536334325c5216c
+j
+:AppListaDeCompras/Views/Popups/ListToBuySharedPage.xaml.cs,8\d\8d756f6e81d9c7431d6a50c467b61c9ad29170b9
