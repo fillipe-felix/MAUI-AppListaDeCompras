@@ -113,3 +113,5 @@ m
 =AppListaDeCompras/Libraries/Components/HorizontalLine.xaml.cs,3\9\398628a3a400f95dab77b753c7bc3d1dbf6a950f
 q
 AAppListaDeCompras/Libraries/Converters/TextSharedListConverter.cs,1\5\15a018c08452c6e6e4be0582f1dd8b0bc9aa368e
+~
+NAppListaDeCompras/Libraries/Converters/TextTotalPriceOfItensInCartConverter.cs,4\a\4a256f460ff0a513d817cad8266d7e73016f42e5

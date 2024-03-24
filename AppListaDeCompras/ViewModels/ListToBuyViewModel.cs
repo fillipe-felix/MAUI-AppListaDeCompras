@@ -35,12 +35,23 @@ public partial class ListToBuyViewModel : ObservableObject
                 {
                     new Product
                     {
+                        Name = "Arroz",
+                        Price = 28.99m,
+                        Quantity = 2,
+                        HasCaught = true
                     },
                     new Product
                     {
+                        Name = "Feijão",
+                        Price = 7.49m,
+                        Quantity = 3,
+                        HasCaught = true
                     },
                     new Product
                     {
+                        Name = "Leite condensado",
+                        Price = 6.29m,
+                        Quantity = 1
                     }
                 }
             },
@@ -59,9 +70,24 @@ public partial class ListToBuyViewModel : ObservableObject
                 {
                     new Product
                     {
+                        Name = "Arroz",
+                        Price = 36.99m,
+                        Quantity = 2,
+                        HasCaught = true
                     },
                     new Product
                     {
+                        Name = "Feijão",
+                        Price = 8.49m,
+                        Quantity = 2,
+                        HasCaught = true
+                    },
+                    new Product
+                    {
+                        Name = "Leite condensado",
+                        Price = 6.29m,
+                        Quantity = 1,
+                        HasCaught = true
                     }
                 }
             }
