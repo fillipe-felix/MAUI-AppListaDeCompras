@@ -97,11 +97,10 @@ public partial class ListToBuyViewModel : ObservableObject
             }
         };
     }
-
-    //TODO - Colocar parametro ListToBuy
+    
     [RelayCommand]
-    private void OpenPopupSharedPage()
+    private void OpenPopupSharedPage(ListToBuy listSelected)
     {
-        MopupService.Instance.PushAsync(new ListToBuySharedPage());
+        MopupService.Instance.PushAsync(new ListToBuySharedPage(listSelected));
     }
 }
