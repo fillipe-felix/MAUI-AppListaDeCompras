@@ -25,27 +25,42 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="70, *, 70" RowDefinitions="Auto, 30">
+                    <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto, 30">
                         <Image
                             Grid.Column="0"
                             Grid.Row="0"
+                            HeightRequest="64"
+                            Margin="15,10,0,10"
                             Source="my_list.png" />
-                        <VerticalStackLayout Grid.Column="1">
-                            <Label Text="{Binding Name}" />
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Margin="15,0,0,0"
+                            VerticalOptions="Center">
+                            <Label Style="{StaticResource Paragraph}" Text="{Binding Name}" />
                             <HorizontalStackLayout>
-                                <Label Text="{Binding Products.Count}" />
-                                <Label Text=" itens - " />
-                                <Label Text="{Binding Users.Count}" />
+                                <Label Style="{StaticResource SmallText}" Text="{Binding Products.Count}" />
+                                <Label Style="{StaticResource SmallText}" Text=" itens - " />
+                                <Label Style="{StaticResource SmallTextEmphasis}" Text="{Binding Users.Count}" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <Label
                             Grid.Column="2"
                             Grid.Row="0"
-                            Text="R$ 55,00" />
+                            Text="R$ 55,00"
+                            VerticalOptions="Center" />
 
-                        <HorizontalStackLayout Grid.ColumnSpan="2" Grid.Row="1">
-                            <Button ImageSource="share.png" Text="Compartilhar" />
-                            <Button ImageSource="delete.png" Text="Excluir" />
+                        <HorizontalStackLayout
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Margin="15,0,0,0">
+                            <Button
+                                ImageSource="share.png"
+                                Style="{StaticResource ButtonBorderless}"
+                                Text="Compartilhar" />
+                            <Button
+                                ImageSource="delete.png"
+                                Style="{StaticResource ButtonBorderless}"
+                                Text="Excluir" />
                         </HorizontalStackLayout>
                     </Grid>
                 </DataTemplate>
