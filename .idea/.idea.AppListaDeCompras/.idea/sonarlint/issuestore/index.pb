@@ -99,3 +99,11 @@ X
 +AppListaDeCompras/Views/ProfilePage.xaml.cs,f\9\f9657d26bcd44062b198fb43c3aaa6cc287abdaa
 b
 2AppListaDeCompras/ViewModels/FirstPageViewModel.cs,7\c\7c80780bdeccaa1a8799a03ff79102556549af74
+U
+%AppListaDeCompras/Models/ListToBuy.cs,a\6\a63baf360be629e2bc88cdacf7d459cbe80cb107
+P
+ AppListaDeCompras/Models/User.cs,1\2\129eed389655447a1cb482b92a59dd5515d16c04
+S
+#AppListaDeCompras/Models/Product.cs,6\c\6c162748a15757d6b63f6676fb818a205380e17c
+b
+2AppListaDeCompras/ViewModels/ListToBuyViewModel.cs,a\3\a3fe53bf057f1bb7e3ebc761611a87df3edbe1d2

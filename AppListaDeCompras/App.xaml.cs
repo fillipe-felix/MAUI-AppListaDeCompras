@@ -8,6 +8,14 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        MainPage = new FirstPage();
+        //Mostra essa tela apenas 1x
+        if (VersionTracking.IsFirstLaunchEver)
+        {
+            MainPage = new FirstPage();
+        }
+        else
+        {
+            MainPage = new AppShell();
+        }
     }
 }
