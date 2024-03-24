@@ -119,3 +119,5 @@ g
 7AppListaDeCompras/Views/Popups/ListToBuySharedPage.xaml,7\1\7102270b47aa39e6fa88afe2f536334325c5216c
 j
 :AppListaDeCompras/Views/Popups/ListToBuySharedPage.xaml.cs,8\d\8d756f6e81d9c7431d6a50c467b61c9ad29170b9
+s
+CAppListaDeCompras/ViewModels/Popups/ListToBuySharedPageViewModel.cs,f\1\f1bb86ea4f71b8e43ec117cb2f1ceb7585f17ede
