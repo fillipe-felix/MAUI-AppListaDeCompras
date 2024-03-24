@@ -107,3 +107,7 @@ S
 #AppListaDeCompras/Models/Product.cs,6\c\6c162748a15757d6b63f6676fb818a205380e17c
 b
 2AppListaDeCompras/ViewModels/ListToBuyViewModel.cs,a\3\a3fe53bf057f1bb7e3ebc761611a87df3edbe1d2
+j
+:AppListaDeCompras/Libraries/Components/HorizontalLine.xaml,7\0\706ab182c23e9238a60c8c3b1dd12fc1848c26a8
+m
+=AppListaDeCompras/Libraries/Components/HorizontalLine.xaml.cs,3\9\398628a3a400f95dab77b753c7bc3d1dbf6a950f
