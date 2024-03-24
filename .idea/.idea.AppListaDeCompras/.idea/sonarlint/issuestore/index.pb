@@ -111,3 +111,5 @@ j
 :AppListaDeCompras/Libraries/Components/HorizontalLine.xaml,7\0\706ab182c23e9238a60c8c3b1dd12fc1848c26a8
 m
 =AppListaDeCompras/Libraries/Components/HorizontalLine.xaml.cs,3\9\398628a3a400f95dab77b753c7bc3d1dbf6a950f
+q
+AAppListaDeCompras/Libraries/Converters/TextSharedListConverter.cs,1\5\15a018c08452c6e6e4be0582f1dd8b0bc9aa368e
