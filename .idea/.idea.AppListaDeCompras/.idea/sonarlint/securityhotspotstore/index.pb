@@ -85,3 +85,7 @@ b
 2AppListaDeCompras/Platforms/MacCatalyst/Program.cs,2\b\2b0be4b60241a483a63acc07045bcbd35a8b3924
 b
 2AppListaDeCompras/Platforms/MacCatalyst/Info.plist,5\7\57c9211a0a9e3233928290f1650f8823e0ea65d5
+V
+&AppListaDeCompras/Views/FirstPage.xaml,4\e\4e11389f0c70e57392142cbdf6122016bb72b6f8
+Y
+)AppListaDeCompras/Views/FirstPage.xaml.cs,d\c\dc8e7c1b5b89eab983bcc9799e0f118c7e04a5a0
