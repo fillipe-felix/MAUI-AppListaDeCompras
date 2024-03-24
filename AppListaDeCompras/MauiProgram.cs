@@ -11,8 +11,9 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>
             {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("Poppins-Light.ttf", "PoppinsLight");
+                fonts.AddFont("Poppins-Regular.ttf", "PoppinsRegular");//OpenSansRegular
+                fonts.AddFont("Poppins-ExtraBold.ttf", "PoppinsExtraBold");//OpenSansSemibold
             });
 
 #if DEBUG
