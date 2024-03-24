@@ -89,3 +89,13 @@ V
 &AppListaDeCompras/Views/FirstPage.xaml,4\e\4e11389f0c70e57392142cbdf6122016bb72b6f8
 Y
 )AppListaDeCompras/Views/FirstPage.xaml.cs,d\c\dc8e7c1b5b89eab983bcc9799e0f118c7e04a5a0
+Z
+*AppListaDeCompras/Views/ListToBuyPage.xaml,1\c\1c229da8ea8ddc5820d5c077b8f9d967e0cebb8b
+]
+-AppListaDeCompras/Views/ListToBuyPage.xaml.cs,1\3\1358e16197e894ef16e5ed95a7caadddb8da4eae
+X
+(AppListaDeCompras/Views/ProfilePage.xaml,c\d\cddd169cfbffd61cfda1e41aa90d810afdf16869
+[
++AppListaDeCompras/Views/ProfilePage.xaml.cs,f\9\f9657d26bcd44062b198fb43c3aaa6cc287abdaa
+b
+2AppListaDeCompras/ViewModels/FirstPageViewModel.cs,7\c\7c80780bdeccaa1a8799a03ff79102556549af74
