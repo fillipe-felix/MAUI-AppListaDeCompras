@@ -121,3 +121,5 @@ CAppListaDeCompras/ViewModels/Popups/ListToBuySharedPageViewModel.cs,f\1\f1bb86
 ,AppListaDeCompras/Views/ListOfItensPage.xaml,0\d\0df518cbf8fac5cbba0241a3af370c60fca3e8fc
 _
 /AppListaDeCompras/Views/ListOfItensPage.xaml.cs,5\6\563fe28bf3c9b8cb3e8d282a5a6df2dcab49de2e
+h
+8AppListaDeCompras/ViewModels/ListOfItensPageViewModel.cs,1\1\1115cd0deb37b95318d1be3e57f9841bdd2e51d3
