@@ -103,4 +103,15 @@ public partial class ListToBuyViewModel : ObservableObject
     {
         MopupService.Instance.PushAsync(new ListToBuySharedPage(listSelected));
     }
+
+    [RelayCommand]
+    private async Task OpenListOfItensPage(ListToBuy selectedList)
+    {
+        var pageParameter = new Dictionary<string, object>
+        {
+            { "ListToBuy", selectedList }
+        };
+        
+        await Shell.Current.GoToAsync("//ListToBuy/ListOfItens", pageParameter);
+    }
 }
