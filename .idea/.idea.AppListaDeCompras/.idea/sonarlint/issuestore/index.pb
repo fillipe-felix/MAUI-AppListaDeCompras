@@ -1,8 +1,4 @@
 
-R
-"AppListaDeCompras/MainPage.xaml.cs,f\5\f5b2f777320900c0be506c712886f5d3d8f67c02
-O
-AppListaDeCompras/MainPage.xaml,7\6\766ab20a24b03ac7e6bd241031e821eac525dfc4
 ]
 -AppListaDeCompras/Resources/Splash/splash.svg,1\2\1228cb0e217d36ba43243a9659abab3e35c23ae5
 _
@@ -121,3 +117,7 @@ j
 :AppListaDeCompras/Views/Popups/ListToBuySharedPage.xaml.cs,8\d\8d756f6e81d9c7431d6a50c467b61c9ad29170b9
 s
 CAppListaDeCompras/ViewModels/Popups/ListToBuySharedPageViewModel.cs,f\1\f1bb86ea4f71b8e43ec117cb2f1ceb7585f17ede
+\
+,AppListaDeCompras/Views/ListOfItensPage.xaml,0\d\0df518cbf8fac5cbba0241a3af370c60fca3e8fc
+_
+/AppListaDeCompras/Views/ListOfItensPage.xaml.cs,5\6\563fe28bf3c9b8cb3e8d282a5a6df2dcab49de2e

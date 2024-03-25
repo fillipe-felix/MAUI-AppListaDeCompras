@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage
-    x:Class="AppListaDeCompras.Views.ListToBuyPage"
+    x:Class="AppListaDeCompras.Views.ListOfItensPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:components="clr-namespace:AppListaDeCompras.Libraries.Components"
     xmlns:converters="clr-namespace:AppListaDeCompras.Libraries.Converters"
@@ -15,16 +15,16 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.BindingContext>
-        <vm:ListToBuyViewModel x:Name="vm" />
-    </ContentPage.BindingContext>
-
-    <Grid RowDefinitions="75, *">
+    <Grid RowDefinitions="75, *, 1, 75">
         <StackLayout
             Grid.Row="0"
             Orientation="Horizontal"
             Padding="10">
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Pesquisar" />
+            <ImageButton HeightRequest="37" Source="back.png" />
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                Margin="15,0,0,0"
+                Placeholder="Pesquisar" />
         </StackLayout>
 
         <CollectionView Grid.Row="1" ItemsSource="{Binding ListToBuy}">
@@ -101,6 +101,22 @@
             Margin="20"
             Text="+"
             VerticalOptions="End" />
-    </Grid>
 
+        <components:HorizontalLine Grid.Row="2" Stroke="LightGray" />
+
+        <Grid ColumnDefinitions="*, *, *" Grid.Row="3">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Lista (0 itens)" />
+                <Label Text="Falta 0 item" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Carrinho" />
+                <Label Text="0 itens" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2">
+                <Label Text="Total" />
+                <Label Text="R$ 0,00" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
 </ContentPage>
