@@ -18,30 +18,41 @@
     <Border
         BackgroundColor="White"
         HeightRequest="400"
-        Padding="20"
         StrokeShape="RoundRectangle 12"
         StrokeThickness="0"
         VerticalOptions="Start"
         WidthRequest="360">
 
-        <VerticalStackLayout Spacing="10">
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Compartilhar"
-                    VerticalOptions="Center" />
-                <ImageButton Command="{Binding CloseCommand}" Source="close.png" />
-            </StackLayout>
-            <Entry Placeholder="E-mail" />
-            <Button Text="Adicionar" />
+        <VerticalStackLayout>
+            <VerticalStackLayout Padding="20" Spacing="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="30,0,0,0"
+                        Style="{StaticResource SmallHeadline}"
+                        Text="Compartilhar"
+                        VerticalOptions="Center" />
+                    <ImageButton Command="{Binding CloseCommand}" Source="close.png" />
+                </StackLayout>
+
+                <Entry Placeholder="E-mail" />
+                <Button Text="Adicionar" />
+            </VerticalStackLayout>
+
 
             <CollectionView ItemsSource="{Binding ListToBuy.Users}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout>
-                            <components:HorizontalLine Stroke="LightGray" />
-                            <Label Text="{Binding Name}" />
-                            <Label Text="{Binding Email}" />
+                            <components:HorizontalLine Margin="0,15" Stroke="LightGray" />
+                            <Label
+                                Padding="20,0"
+                                Style="{StaticResource Paragraph}"
+                                Text="{Binding Name}" />
+                            <Label
+                                Padding="20,0"
+                                Style="{StaticResource SmallText}"
+                                Text="{Binding Email}" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
