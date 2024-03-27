@@ -1,6 +1,8 @@
-﻿namespace AppListaDeCompras.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class Product
+namespace AppListaDeCompras.Models;
+
+public partial class Product : ObservableObject
 {
     public int Id { get; set; }
 
@@ -10,5 +12,7 @@ public class Product
     //TODO - trocar para um ENUM
     public string QuantityUnitMeasure { get; set; }
     public decimal Price { get; set; }
-    public bool HasCaught { get; set; } = false;
+    
+    [ObservableProperty]
+    public bool hasCaught = false;
 }

@@ -46,7 +46,7 @@
                 <DataTemplate>
                     <Grid ColumnDefinitions="60, *, 80" RowDefinitions="Auto, 1">
 
-                        <CheckBox HorizontalOptions="End" />
+                        <CheckBox HorizontalOptions="End" IsChecked="{Binding HasCaught}" />
                         <VerticalStackLayout
                             Grid.Column="1"
                             Margin="15,15,0,15"
@@ -59,7 +59,7 @@
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                         <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
-                            <Label>
+                            <Label IsVisible="{Binding HasCaught}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Style="{StaticResource SmallText}" Text="{Binding Quantity}" />
@@ -97,6 +97,7 @@
             Grid.Row="2"
             HorizontalOptions="End"
             Margin="20"
+            Style="{StaticResource ButtonTransparent}"
             Text="+"
             VerticalOptions="End" />
 
