@@ -12,6 +12,10 @@
         <ResourceDictionary>
             <converters:ColorTotalPriceOfItensInCartConverter x:Key="ColorTotalPriceOfItensInCartConverter" />
             <converters:TextTotalPriceOfItemInCartConverter x:Key="TextTotalPriceOfItemInCartConverter" />
+            <converters:TextQuantityItemOfListConverter x:Key="TextQuantityItemOfListConverter" />
+            <converters:TextQuantityOfItensNotCaughtConverter x:Key="TextQuantityOfItensNotCaughtConverter" />
+            <converters:TextQuantityOfItensCaughtConverter x:Key="TextQuantityOfItensCaughtConverter" />
+            <converters:TextTotalPriceOfItensInCartConverter x:Key="TextTotalPriceOfItensInCartConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -120,11 +124,14 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Style="{StaticResource Paragraph}" Text="Lista " />
-                            <Span Style="{StaticResource SmallText}" Text="(0 itens)" />
+                            <Span Style="{StaticResource SmallText}" Text="(" />
+                            <Span Style="{StaticResource SmallText}" Text="{Binding ListToBuy.Products.Count}" />
+                            <Span Style="{StaticResource SmallText}" Text="{Binding ListToBuy.Products.Count, Converter={StaticResource TextQuantityItemOfListConverter}}" />
+                            <Span Style="{StaticResource SmallText}" Text=")" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label Style="{StaticResource SmallText}" Text="Falta 0 item" />
+                <Label Style="{StaticResource SmallText}" Text="{Binding ListToBuy.Products, Converter={StaticResource TextQuantityOfItensNotCaughtConverter}}" />
             </VerticalStackLayout>
             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
                 <Label
@@ -134,7 +141,7 @@
                 <Label
                     HorizontalTextAlignment="Center"
                     Style="{StaticResource SmallText}"
-                    Text="0 itens" />
+                    Text="{Binding ListToBuy.Products, Converter={StaticResource TextQuantityOfItensCaughtConverter}}" />
             </VerticalStackLayout>
             <VerticalStackLayout
                 Grid.Column="2"
@@ -142,7 +149,7 @@
                 Margin="0,0,12,0"
                 VerticalOptions="Center">
                 <Label Style="{StaticResource SubHeadline}" Text="Total" />
-                <Label Style="{StaticResource SmallTextEmphasis}" Text="R$ 0,00" />
+                <Label Style="{StaticResource SmallTextEmphasis}" Text="{Binding ListToBuy, Converter={StaticResource TextTotalPriceOfItensInCartConverter}}" />
             </VerticalStackLayout>
         </Grid>
     </Grid>

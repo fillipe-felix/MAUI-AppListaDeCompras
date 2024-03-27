@@ -25,7 +25,6 @@ public class TextTotalPriceOfItensInCartConverter : IValueConverter
 
         foreach (var product in listToBuy.Products)
         {
-            //TODO - Impacto: QuantityUnitMeasure...
             if (product.HasCaught)
             {
                 totalPrice += product.Price * product.Quantity;

@@ -129,3 +129,9 @@ h
 MAppListaDeCompras/Libraries/Converters/TextTotalPriceOfItemInCartConverter.cs,8\1\812ca72084fabe4d52d72fb811cda153ab8a0135
 
 OAppListaDeCompras/Libraries/Converters/ColorTotalPriceOfItensInCartConverter.cs,b\0\b0f86970b71a24b7737d445b802d9f21e8933f6b
+y
+IAppListaDeCompras/Libraries/Converters/TextQuantityItemOfListConverter.cs,1\b\1b3a407970615e21c2011615ccdd1539c39a23cd
+
+OAppListaDeCompras/Libraries/Converters/TextQuantityOfItensNotCaughtConverter.cs,7\5\753b1e9fde8f322822278beacfbd733b170c9420
+|
+LAppListaDeCompras/Libraries/Converters/TextQuantityOfItensCaughtConverter.cs,5\a\5a9972c966fc70220af542176f2e127a3e6106c7
