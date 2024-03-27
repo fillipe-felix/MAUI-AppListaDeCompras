@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
 using AppListaDeCompras.Models;
+using AppListaDeCompras.Models.Enums;
 using AppListaDeCompras.Views.Popups;
 
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -42,6 +43,7 @@ public partial class ListToBuyViewModel : ObservableObject
                         Name = "Arroz",
                         Price = 28.99m,
                         Quantity = 2,
+                        QuantityUnitMeasure = UnitMeasure.Un,
                         HasCaught = true
                     },
                     new Product
@@ -49,13 +51,22 @@ public partial class ListToBuyViewModel : ObservableObject
                         Name = "Feijão",
                         Price = 7.49m,
                         Quantity = 3,
+                        QuantityUnitMeasure = UnitMeasure.Un,
                         HasCaught = true
                     },
                     new Product
                     {
                         Name = "Leite condensado",
                         Price = 6.29m,
+                        QuantityUnitMeasure = UnitMeasure.Un,
                         Quantity = 1
+                    },
+                    new Product
+                    {
+                        Name = "Coxão Mole",
+                        Price = 29.80m,
+                        QuantityUnitMeasure = UnitMeasure.Kg,
+                        Quantity = 1.5m
                     }
                 }
             },
@@ -77,13 +88,15 @@ public partial class ListToBuyViewModel : ObservableObject
                         Name = "Arroz",
                         Price = 36.99m,
                         Quantity = 2,
-                        HasCaught = true
+                        HasCaught = true,
+                        QuantityUnitMeasure = UnitMeasure.Un
                     },
                     new Product
                     {
                         Name = "Feijão",
                         Price = 8.49m,
                         Quantity = 2,
+                        QuantityUnitMeasure = UnitMeasure.Un,
                         HasCaught = true
                     },
                     new Product
@@ -91,6 +104,7 @@ public partial class ListToBuyViewModel : ObservableObject
                         Name = "Leite condensado",
                         Price = 6.29m,
                         Quantity = 1,
+                        QuantityUnitMeasure = UnitMeasure.Un,
                         HasCaught = true
                     }
                 }

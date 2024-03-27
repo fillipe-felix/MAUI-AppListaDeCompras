@@ -123,3 +123,5 @@ _
 /AppListaDeCompras/Views/ListOfItensPage.xaml.cs,5\6\563fe28bf3c9b8cb3e8d282a5a6df2dcab49de2e
 h
 8AppListaDeCompras/ViewModels/ListOfItensPageViewModel.cs,1\1\1115cd0deb37b95318d1be3e57f9841bdd2e51d3
+]
+-AppListaDeCompras/Models/Enums/UnitMeasure.cs,f\9\f924adf4c119f791bfa54fa2c9983e0df24a2cd6
