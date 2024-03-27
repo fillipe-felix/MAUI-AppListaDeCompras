@@ -127,3 +127,5 @@ h
 -AppListaDeCompras/Models/Enums/UnitMeasure.cs,f\9\f924adf4c119f791bfa54fa2c9983e0df24a2cd6
 }
 MAppListaDeCompras/Libraries/Converters/TextTotalPriceOfItemInCartConverter.cs,8\1\812ca72084fabe4d52d72fb811cda153ab8a0135
+
+OAppListaDeCompras/Libraries/Converters/ColorTotalPriceOfItensInCartConverter.cs,b\0\b0f86970b71a24b7737d445b802d9f21e8933f6b
