@@ -4,12 +4,12 @@ using AppListaDeCompras.Models;
 
 namespace AppListaDeCompras.Libraries.Converters;
 
-public class TextTotalPriceOfItemInCartConverter : IValueConverter
+public class TextTotalPriceOfItemInCartConverter : IMultiValueConverter
 {
 
-    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
     {
-        var product = value as Product;
+        var product = values[0] as Product;
 
         if (product is null)
         {
@@ -30,8 +30,7 @@ public class TextTotalPriceOfItemInCartConverter : IValueConverter
         
         return "R$ 0,00";
     }
-
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
     {
         throw new NotImplementedException();
     }

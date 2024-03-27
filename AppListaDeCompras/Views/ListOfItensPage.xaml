@@ -73,8 +73,14 @@
                             <Label
                                 HorizontalOptions="Start"
                                 Style="{StaticResource SubHeadline}"
-                                Text="{Binding ., Converter={StaticResource TextTotalPriceOfItemInCartConverter}}"
-                                VerticalOptions="Center" />
+                                VerticalOptions="Center">
+                                <Label.Text>
+                                    <MultiBinding Converter="{StaticResource TextTotalPriceOfItemInCartConverter}">
+                                        <Binding Path="." />
+                                        <Binding Path="HasCaught" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
                         </VerticalStackLayout>
 
 
