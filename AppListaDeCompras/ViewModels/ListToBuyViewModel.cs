@@ -67,6 +67,12 @@ public partial class ListToBuyViewModel : ObservableObject
                         Price = 29.80m,
                         QuantityUnitMeasure = UnitMeasure.Kg,
                         Quantity = 1.5m
+                    },
+                    new Product
+                    {
+                        Name = "Alcatra",
+                        QuantityUnitMeasure = UnitMeasure.Kg,
+                        Quantity = 1.5m
                     }
                 }
             },

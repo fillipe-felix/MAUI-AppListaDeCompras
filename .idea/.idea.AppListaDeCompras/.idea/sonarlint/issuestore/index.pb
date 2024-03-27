@@ -125,3 +125,5 @@ h
 8AppListaDeCompras/ViewModels/ListOfItensPageViewModel.cs,1\1\1115cd0deb37b95318d1be3e57f9841bdd2e51d3
 ]
 -AppListaDeCompras/Models/Enums/UnitMeasure.cs,f\9\f924adf4c119f791bfa54fa2c9983e0df24a2cd6
+}
+MAppListaDeCompras/Libraries/Converters/TextTotalPriceOfItemInCartConverter.cs,8\1\812ca72084fabe4d52d72fb811cda153ab8a0135
