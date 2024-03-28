@@ -2,6 +2,6 @@
 
 public enum UnitMeasure
 {
-    Un,
-    Kg
+    Un = 1,
+    Kg = 2
 }

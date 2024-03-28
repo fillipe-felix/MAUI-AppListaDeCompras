@@ -24,7 +24,7 @@ namespace AppListaDeCompras.Libraries.Services
                 return;
             }
 
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("mongoDbAtlasConfig.json");
+            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Resources/Configs/mongoDbAtlasConfig.json");
             using StreamReader reader = new(fileStream);
             var fileContent = await reader.ReadToEndAsync();
 
