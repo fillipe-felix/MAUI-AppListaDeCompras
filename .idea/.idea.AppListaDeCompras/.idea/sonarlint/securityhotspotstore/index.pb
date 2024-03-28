@@ -141,3 +141,9 @@ m
 =AppListaDeCompras/Views/Popups/ListOfItensAddItemPage.xaml.cs,5\3\53fb1b11362d65471e3e131f002fe4930a50c1a6
 v
 FAppListaDeCompras/ViewModels/Popups/ListOfItensAddItemPageViewModel.cs,4\f\4f32a65dff5ab5adff95e5fcec034ed9b0c80f00
+d
+4AppListaDeCompras/ViewModels/ProfilePageViewModel.cs,3\6\36d4fa4fc19b11ada498d829a19eea3143d4730e
+[
++AppListaDeCompras/Views/AccessCodePage.xaml,5\4\5433a5f8525398a5e0350d990f7006ff8c57a6e6
+^
+.AppListaDeCompras/Views/AccessCodePage.xaml.cs,d\0\d049f2eda0ab56e6e6e368e0d137053d762a8440

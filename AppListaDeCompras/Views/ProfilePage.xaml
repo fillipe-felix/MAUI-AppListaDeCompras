@@ -1,9 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppListaDeCompras.Views.ProfilePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+<ContentPage
+    x:Class="AppListaDeCompras.Views.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.BindingContext>
+        <vm:ProfilePageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="20">
+            <Image
+                HeightRequest="{OnPlatform Default=330,
+                                           Android=290}"
+                SemanticProperties.Description="Imagem de um envelope de e-mail"
+                Source="image_mail.png" />
+            <Entry
+                Placeholder="Digite seu nome"
+                Text="{Binding User.Name}"
+                VerticalOptions="EndAndExpand" />
+            <Entry Placeholder="Digite seu e-mail" Text="{Binding User.Email}" />
+            <Button
+                Command="{Binding NavigateToAccessCodePageCommand}"
+                SemanticProperties.Description="Acessa a próxima tela do app, para informar o código de acesso enviado para seu e-mail"
+                SemanticProperties.Hint="Salvar"
+                Text="Salvar" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

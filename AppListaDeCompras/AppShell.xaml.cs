@@ -9,5 +9,6 @@ public partial class AppShell : Shell
         InitializeComponent();
         
         Routing.RegisterRoute("ListToBuy/ListOfItens", typeof(ListOfItensPage));
+        Routing.RegisterRoute("Profile/AccessCode", typeof(AccessCodePage));
     }
 }
