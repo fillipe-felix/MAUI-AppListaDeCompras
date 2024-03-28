@@ -29,7 +29,10 @@
             Grid.Row="0"
             Orientation="Horizontal"
             Padding="10">
-            <ImageButton HeightRequest="37" Source="back.png" />
+            <ImageButton
+                Command="{Binding BackPageCommand}"
+                HeightRequest="37"
+                Source="back.png" />
             <Entry
                 HorizontalOptions="FillAndExpand"
                 Margin="15,0,0,0"

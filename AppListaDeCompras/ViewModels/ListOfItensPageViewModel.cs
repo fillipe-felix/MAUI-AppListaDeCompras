@@ -22,4 +22,10 @@ public partial class ListOfItensPageViewModel : ObservableObject
     {
         OnPropertyChanged(nameof(ListToBuy));
     }
+
+    [RelayCommand]
+    private async Task BackPage()
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }
