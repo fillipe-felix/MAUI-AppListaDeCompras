@@ -1,0 +1,9 @@
+{
+    "appId": "application-0-sswlu",
+    "appUrl": "https://services.cloud.mongodb.com/groups/6605e902b458f626ae9c12a7/apps/6605f002c91e4983c0249cb7",
+    "baseUrl": "https://services.cloud.mongodb.com",
+    "clientApiBaseUrl": "https://sa-east-1.aws.services.cloud.mongodb.com",
+    "dataApiBaseUrl": "https://sa-east-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/6605e902b458f626ae9c12a7/explorer/Cluster0/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}

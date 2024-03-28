@@ -59,6 +59,8 @@
 
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)"/>
+        <None Remove="Resources\Configs\atlasConfig.json" />
+        <MauiAsset Include="Resources\Configs\mongoDbAtlasConfig.json" />
     </ItemGroup>
 
     <ItemGroup>
@@ -69,6 +71,7 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
         <PackageReference Include="Mopups" Version="1.3.1" />
+        <PackageReference Include="Realm" Version="11.7.0" />
     </ItemGroup>
 
 </Project>
