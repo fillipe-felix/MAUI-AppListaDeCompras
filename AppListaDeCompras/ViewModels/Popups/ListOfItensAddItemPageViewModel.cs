@@ -16,4 +16,10 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
     {
         MopupService.Instance.PopAsync();
     }
+    
+    [RelayCommand]
+    private void Save()
+    {
+        
+    }
 }
