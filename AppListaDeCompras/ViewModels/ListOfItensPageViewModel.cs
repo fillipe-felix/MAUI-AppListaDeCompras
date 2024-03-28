@@ -1,6 +1,7 @@
 ﻿using AppListaDeCompras.Models;
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AppListaDeCompras.ViewModels;
 
@@ -14,5 +15,11 @@ public partial class ListOfItensPageViewModel : ObservableObject
         get => _listToBuy;
         set => SetProperty(ref _listToBuy, value);
         
+    }
+
+    [RelayCommand]
+    private void UpdateListToBuy()
+    {
+        OnPropertyChanged(nameof(ListToBuy));
     }
 }
