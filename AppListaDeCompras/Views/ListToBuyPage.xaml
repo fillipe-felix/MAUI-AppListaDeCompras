@@ -92,6 +92,7 @@
         </CollectionView>
 
         <Button
+            Command="{Binding OpenAddListOfItensPageCommand}"
             Grid.Row="2"
             HorizontalOptions="End"
             Margin="20"

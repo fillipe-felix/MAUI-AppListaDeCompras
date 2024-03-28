@@ -134,4 +134,10 @@ public partial class ListToBuyViewModel : ObservableObject
         
         await Shell.Current.GoToAsync("//ListToBuy/ListOfItens", pageParameter);
     }
+
+    [RelayCommand]
+    private async Task OpenAddListOfItensPage()
+    {
+        await Shell.Current.GoToAsync("//ListToBuy/ListOfItens");
+    }
 }
