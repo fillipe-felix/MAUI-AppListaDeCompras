@@ -1,9 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppListaDeCompras.Views.AccessCodePage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+<ContentPage
+    x:Class="AppListaDeCompras.Views.AccessCodePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:vm="clr-namespace:AppListaDeCompras.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.BindingContext>
+        <vm:AccessCodePageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="20">
+            <Image
+                HeightRequest="{OnPlatform Default=330,
+                                           Android=290}"
+                SemanticProperties.Description="Carrinho cheio de produtos"
+                Source="image_password.png" />
+            <Label
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Acesso"
+                VerticalOptions="EndAndExpand" />
+            <Label
+                SemanticProperties.HeadingLevel="Level2"
+                Style="{StaticResource SubHeadline}"
+                Text="Enviamos um código para o seu e-mail,&#10; informe ele abaixo" />
+
+            <Entry
+                Placeholder="Código de acesso"
+                Text="{Binding User.AccessCodeTemp}"
+                VerticalOptions="EndAndExpand" />
+            <Button
+                SemanticProperties.Description="Acessa a próxima tela do app, tela de cadastro de lista de compras"
+                SemanticProperties.Hint="Confirmar"
+                Text="Confirmar" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

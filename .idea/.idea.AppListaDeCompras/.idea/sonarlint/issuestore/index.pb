@@ -147,3 +147,5 @@ d
 +AppListaDeCompras/Views/AccessCodePage.xaml,5\4\5433a5f8525398a5e0350d990f7006ff8c57a6e6
 ^
 .AppListaDeCompras/Views/AccessCodePage.xaml.cs,d\0\d049f2eda0ab56e6e6e368e0d137053d762a8440
+g
+7AppListaDeCompras/ViewModels/AccessCodePageViewModel.cs,6\9\6989452c0d360f7f72cd14ea0142a1a25d908846
