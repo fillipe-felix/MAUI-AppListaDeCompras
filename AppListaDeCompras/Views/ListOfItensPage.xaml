@@ -113,6 +113,7 @@
         </CollectionView>
 
         <Button
+            Command="{Binding OpenPopupAddItemPageCommand}"
             Grid.Row="2"
             HorizontalOptions="End"
             Margin="20"

@@ -135,3 +135,9 @@ IAppListaDeCompras/Libraries/Converters/TextQuantityItemOfListConverter.cs,1\b\
 OAppListaDeCompras/Libraries/Converters/TextQuantityOfItensNotCaughtConverter.cs,7\5\753b1e9fde8f322822278beacfbd733b170c9420
 |
 LAppListaDeCompras/Libraries/Converters/TextQuantityOfItensCaughtConverter.cs,5\a\5a9972c966fc70220af542176f2e127a3e6106c7
+j
+:AppListaDeCompras/Views/Popups/ListOfItensAddItemPage.xaml,6\3\63007d5cf428dc1504584176b96d22bca32228c8
+m
+=AppListaDeCompras/Views/Popups/ListOfItensAddItemPage.xaml.cs,5\3\53fb1b11362d65471e3e131f002fe4930a50c1a6
+v
+FAppListaDeCompras/ViewModels/Popups/ListOfItensAddItemPageViewModel.cs,4\f\4f32a65dff5ab5adff95e5fcec034ed9b0c80f00

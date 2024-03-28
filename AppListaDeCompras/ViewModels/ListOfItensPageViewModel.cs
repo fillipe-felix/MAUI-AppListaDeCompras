@@ -1,7 +1,10 @@
 ﻿using AppListaDeCompras.Models;
+using AppListaDeCompras.Views.Popups;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+
+using Mopups.Services;
 
 namespace AppListaDeCompras.ViewModels;
 
@@ -27,5 +30,11 @@ public partial class ListOfItensPageViewModel : ObservableObject
     private async Task BackPage()
     {
         await Shell.Current.GoToAsync("..");
+    }
+    
+    [RelayCommand]
+    private async Task OpenPopupAddItemPage()
+    {
+        await MopupService.Instance.PushAsync(new ListOfItensAddItemPage());
     }
 }
