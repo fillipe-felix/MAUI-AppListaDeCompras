@@ -63,6 +63,12 @@ public partial class ListOfItensPageViewModel : ObservableObject
     [RelayCommand]
     private async Task OpenPopupAddItemPage()
     {
-        await MopupService.Instance.PushAsync(new ListOfItensAddItemPage(ListToBuy));
+        await MopupService.Instance.PushAsync(new ListOfItensAddItemPage(ListToBuy!));
+    }
+    
+    [RelayCommand]
+    private async Task OpenPopupEditItemPage(Product product)
+    {
+        await MopupService.Instance.PushAsync(new ListOfItensAddItemPage(ListToBuy!, product));
     }
 }

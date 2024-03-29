@@ -57,7 +57,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="60, *, 80" RowDefinitions="Auto, 1">
-
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenPopupEditItemPageCommand, Source={x:Reference vm}}" CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
                         <CheckBox HorizontalOptions="End" IsChecked="{Binding HasCaught}" />
                         <VerticalStackLayout
                             Grid.Column="1"
