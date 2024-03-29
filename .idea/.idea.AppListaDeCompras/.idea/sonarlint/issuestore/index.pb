@@ -149,16 +149,8 @@ d
 .AppListaDeCompras/Views/AccessCodePage.xaml.cs,d\0\d049f2eda0ab56e6e6e368e0d137053d762a8440
 g
 7AppListaDeCompras/ViewModels/AccessCodePageViewModel.cs,6\9\6989452c0d360f7f72cd14ea0142a1a25d908846
-R
-"AppListaDeCompras/atlasConfig.json,2\3\230e2483db3de3b5135d0cb26e61d508df9ba7bb
-d
-4AppListaDeCompras/Libraries/Services/RealmService.cs,3\7\37e1c05158a4baa00e56fcb76b19fea095369f91
-k
-;AppListaDeCompras/Libraries/Services/MondoDbAtlasService.cs,a\2\a2641e6e8e9b8bb89aff4d15db20ffbc34361b4f
 Q
 !AppListaDeCompras/FodyWeavers.xml,7\8\7806d4e534e4db480104ef09431e780b9c9d8625
-k
-;AppListaDeCompras/Resources/Configs/mongoDbAtlasConfig.json,2\1\21c16518205e1ffc1b850626b7be157346ac4aa6
 k
 ;AppListaDeCompras/Libraries/Services/MongoDbAtlasService.cs,e\5\e5c0941a04e2ff495a7a44d8fb9a17da453dacf4
 g

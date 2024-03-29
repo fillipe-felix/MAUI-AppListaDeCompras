@@ -1,4 +1,6 @@
-﻿using MongoDB.Bson;
+﻿using AppListaDeCompras.Models.Enums;
+
+using MongoDB.Bson;
 
 using Realms;
 
@@ -17,24 +19,13 @@ public partial class Product : IRealmObject
     public decimal Quantity { get; set; }
 
     [MapTo("quantity_unit_measure")]
-    public int QuantityUnitMeasure { get; set; }
+    public string QuantityUnitMeasure { get; set; } = (string)Enum.GetName(UnitMeasure.Un);
 
     [MapTo("price")]
     public decimal Price { get; set; }
-
-
-    private bool hasCaught = false;
-
+    
     [MapTo("has_caught")]
-    public bool HasCaught
-    {
-        get { return hasCaught; }
-        set
-        {
-            hasCaught = value;
-            //OnPropertyChange(nameof(HasCaught));
-        }
-    }
+    public bool HasCaught { get; set; }
     
     [MapTo("created_at")]
     public DateTimeOffset CreatedAt { get; set; }

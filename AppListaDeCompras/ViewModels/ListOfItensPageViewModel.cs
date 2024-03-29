@@ -53,13 +53,7 @@ public partial class ListOfItensPageViewModel : ObservableObject
             }
         });
     }
-
-    [RelayCommand]
-    private void UpdateListToBuy()
-    {
-        OnPropertyChanged(nameof(ListToBuy));
-    }
-
+    
     [RelayCommand]
     private async Task BackPage()
     {
