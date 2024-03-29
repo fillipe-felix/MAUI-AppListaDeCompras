@@ -159,3 +159,7 @@ Q
 !AppListaDeCompras/FodyWeavers.xml,7\8\7806d4e534e4db480104ef09431e780b9c9d8625
 k
 ;AppListaDeCompras/Resources/Configs/mongoDbAtlasConfig.json,2\1\21c16518205e1ffc1b850626b7be157346ac4aa6
+k
+;AppListaDeCompras/Libraries/Services/MongoDbAtlasService.cs,e\5\e5c0941a04e2ff495a7a44d8fb9a17da453dacf4
+g
+7AppListaDeCompras/Resources/Raw/mongoDbAtlasConfig.json,0\d\0d9aa000e1ef8847c5c4974d21a7cd28c68bba0c

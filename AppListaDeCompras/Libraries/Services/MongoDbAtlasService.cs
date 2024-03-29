@@ -5,7 +5,7 @@ using Realms.Sync;
 
 namespace AppListaDeCompras.Libraries.Services
 {
-    public static class MondoDbAtlasService
+    public static class MongoDbAtlasService
     {
         private static bool serviceInitialised;
 
@@ -24,7 +24,7 @@ namespace AppListaDeCompras.Libraries.Services
                 return;
             }
 
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Resources/Configs/mongoDbAtlasConfig.json");
+            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("mongoDbAtlasConfig.json");
             using StreamReader reader = new(fileStream);
             var fileContent = await reader.ReadToEndAsync();
 
@@ -79,6 +79,18 @@ namespace AppListaDeCompras.Libraries.Services
             //This will populate the initial set of subscriptions the first time the realm is opened
             using var realm = GetRealm();
             await realm.Subscriptions.WaitForSynchronizationAsync();
+        }
+        
+        public static async Task LoginAsync()
+        {
+            var user = await app.LogInAsync(Credentials.Anonymous());
+
+            if (user is not null)
+            {
+                //This will populate the initial set of subscriptions the first time the realm is opened
+                using var realm = GetRealm();
+                await realm.Subscriptions.WaitForSynchronizationAsync();
+            }
         }
 
         public static async Task LogoutAsync()

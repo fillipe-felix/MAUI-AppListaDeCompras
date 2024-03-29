@@ -60,7 +60,6 @@
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)"/>
         <None Remove="Resources\Configs\atlasConfig.json" />
-        <MauiAsset Include="Resources\Configs\mongoDbAtlasConfig.json" />
     </ItemGroup>
 
     <ItemGroup>

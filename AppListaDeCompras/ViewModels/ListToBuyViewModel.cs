@@ -18,7 +18,7 @@ public partial class ListToBuyViewModel : ObservableObject
 
     public ListToBuyViewModel()
     {
-        _listToBuy = new ObservableCollection<ListToBuy>
+        /*_listToBuy = new ObservableCollection<ListToBuy>
         {
             new ListToBuy
             {
@@ -115,7 +115,7 @@ public partial class ListToBuyViewModel : ObservableObject
                     }
                 }
             }
-        };
+        };*/
     }
     
     [RelayCommand]
