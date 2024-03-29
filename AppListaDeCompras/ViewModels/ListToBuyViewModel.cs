@@ -10,12 +10,14 @@ using CommunityToolkit.Mvvm.Input;
 
 using Mopups.Services;
 
+using Realms;
+
 namespace AppListaDeCompras.ViewModels;
 
 public partial class ListToBuyViewModel : ObservableObject
 {
     [ObservableProperty]
-    private ObservableCollection<ListToBuy> _listToBuy;
+    private IQueryable<ListToBuy> _listsOfListToBuy;
 
     public ListToBuyViewModel()
     {
@@ -29,6 +31,10 @@ public partial class ListToBuyViewModel : ObservableObject
         await MongoDbAtlasService.LoginAsync();
         
         //TODO - carregar os dados
+
+        var realm = MongoDbAtlasService.GetMainThreadRealm();
+
+        ListsOfListToBuy = realm.All<ListToBuy>();
     }
     
     [RelayCommand]

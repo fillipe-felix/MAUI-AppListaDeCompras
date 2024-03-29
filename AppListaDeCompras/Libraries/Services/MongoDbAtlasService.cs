@@ -1,7 +1,11 @@
 using System.Text.Json;
 
+using AppListaDeCompras.Models;
+
 using Realms;
 using Realms.Sync;
+
+using User = Realms.Sync.User;
 
 namespace AppListaDeCompras.Libraries.Services
 {
@@ -55,16 +59,15 @@ namespace AppListaDeCompras.Libraries.Services
 
         public static Realm GetRealm()
         {
-            var config = new FlexibleSyncConfiguration(app.CurrentUser)
-            {
-                PopulateInitialSubscriptions = (realm) =>
-                {
-                    //var (query, queryName) = GetQueryForSubscriptionType(realm, SubscriptionType.Mine);
-                    //realm.Subscriptions.Add(query, new SubscriptionOptions { Name = queryName });
-                }
-            };
+            var config = new FlexibleSyncConfiguration(app.CurrentUser!);
+            var realm = Realm.GetInstance(config);
+            
+            //TODO - Subscriptions
+            realm.All<ListToBuy>().SubscribeAsync();
+            realm.All<Product>().SubscribeAsync();
+            realm.All<Models.User>().SubscribeAsync();
 
-            return Realm.GetInstance(config);
+            return realm;
         }
 
         public static async Task RegisterAsync(string email, string password)
