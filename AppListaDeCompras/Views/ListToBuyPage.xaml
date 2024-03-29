@@ -41,7 +41,7 @@
                     <VerticalStackLayout>
                         <Grid ColumnDefinitions="90, *, 80" RowDefinitions="Auto">
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding OpenListOfItensPageCommand, Source={x:Reference vm}}" CommandParameter="{Binding .}" />
+                                <TapGestureRecognizer Command="{Binding OpenListOfItensToEditPageCommand, Source={x:Reference vm}}" CommandParameter="{Binding .}" />
                             </Grid.GestureRecognizers>
                             <Image
                                 Grid.Column="0"

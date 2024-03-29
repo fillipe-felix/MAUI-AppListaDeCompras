@@ -44,7 +44,7 @@ public partial class ListToBuyViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private async Task OpenListOfItensPage(ListToBuy selectedList)
+    private async Task OpenListOfItensToEditPage(ListToBuy selectedList)
     {
         var pageParameter = new Dictionary<string, object>
         {

@@ -36,8 +36,12 @@
             <Entry
                 HorizontalOptions="FillAndExpand"
                 Margin="15,0,0,0"
-                Placeholder="Pesquisar"
-                Text="{Binding ListToBuy.Name}" />
+                Placeholder="Nome da Lista"
+                Text="{Binding ListToBuy.Name}">
+                <Entry.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding SaveListToBuyCommand}" EventName="Unfocused" />
+                </Entry.Behaviors>
+            </Entry>
         </StackLayout>
         <Label
             Grid.Row="1"

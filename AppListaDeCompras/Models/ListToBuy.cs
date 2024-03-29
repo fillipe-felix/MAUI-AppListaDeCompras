@@ -8,7 +8,7 @@ public partial class ListToBuy : IRealmObject
 {
     [PrimaryKey]
     [MapTo("_id")]
-    public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
+    public ObjectId Id { get; set; }
     
     [MapTo("name")]
     public string Name { get; set; } = string.Empty;
