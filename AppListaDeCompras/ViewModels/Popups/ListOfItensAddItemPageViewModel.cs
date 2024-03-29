@@ -61,12 +61,12 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
 
         await realm.WriteAsync(() =>
         {
-            if (Product!.Id == default)
+            if (Product!.Id == default(ObjectId))
             {
                 ProductForm.Id = ObjectId.GenerateNewId();
                 ProductForm.CreatedAt = DateTime.UtcNow;
                 
-                List.Products.Add(Product);
+                List.Products.Add(ProductForm);
                 realm.Add(List, true);
             }
             else

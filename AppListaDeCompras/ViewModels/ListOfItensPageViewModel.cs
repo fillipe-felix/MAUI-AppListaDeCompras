@@ -40,7 +40,7 @@ public partial class ListOfItensPageViewModel : ObservableObject
 
         await realm.WriteAsync(() =>
         {
-            if (ListToBuy.Id == default)
+            if (ListToBuy.Id == default(ObjectId))
             {
                 ListToBuy.Id = ObjectId.GenerateNewId();
                 ListToBuy.CreatedAt = DateTime.UtcNow;
@@ -70,5 +70,16 @@ public partial class ListOfItensPageViewModel : ObservableObject
     private async Task OpenPopupEditItemPage(Product product)
     {
         await MopupService.Instance.PushAsync(new ListOfItensAddItemPage(ListToBuy!, product));
+    }
+
+    [RelayCommand]
+    private async Task DeleteItem(Product product)
+    {
+        var realm = MongoDbAtlasService.GetMainThreadRealm();
+
+        await realm.WriteAsync(() =>
+        {
+            realm.Remove(product);
+        });
     }
 }

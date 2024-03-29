@@ -59,4 +59,20 @@ public partial class ListToBuyViewModel : ObservableObject
     {
         await Shell.Current.GoToAsync("//ListToBuy/ListOfItens");
     }
+
+    [RelayCommand]
+    private async Task DeleteList(ListToBuy listToBuy)
+    {
+        var resposta = await App.Current.MainPage.DisplayAlert("Excluir lista", $"Tem certeza que deseja excluir a lista '{listToBuy.Name}'?", "Sim", "Não");
+
+        if (resposta)
+        {
+            var realm = MongoDbAtlasService.GetMainThreadRealm();
+
+            await realm.WriteAsync(() =>
+            {
+                realm.Remove(listToBuy);
+            });
+        }
+    }
 }
