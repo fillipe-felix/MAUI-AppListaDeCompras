@@ -83,8 +83,13 @@ namespace AppListaDeCompras.Libraries.Services
         
         public static async Task LoginAsync()
         {
-            var user = await app.LogInAsync(Credentials.Anonymous());
+            User user = CurrentUser;
 
+            if (CurrentUser is null)
+            {
+                user = await app.LogInAsync(Credentials.Anonymous());
+            }
+            
             if (user is not null)
             {
                 //This will populate the initial set of subscriptions the first time the realm is opened
