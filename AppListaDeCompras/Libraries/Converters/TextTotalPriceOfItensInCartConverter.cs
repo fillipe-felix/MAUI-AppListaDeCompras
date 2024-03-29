@@ -9,7 +9,7 @@ public class TextTotalPriceOfItensInCartConverter : IValueConverter
 
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        List<Product>? listOfProducts = value as List<Product>;
+        IList<Product>? listOfProducts = value as IList<Product>;
 
         if (listOfProducts is null)
         {

@@ -9,7 +9,7 @@ public class TextQuantityOfItensNotCaughtConverter : IValueConverter
 
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        List<Product> products = (List<Product>)value!;
+        IList<Product> products = (IList<Product>)value!;
 
         var notCaughtCount = products.Count(p => !p.HasCaught);
 
