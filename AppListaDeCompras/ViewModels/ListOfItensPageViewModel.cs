@@ -4,6 +4,7 @@ using AppListaDeCompras.Views.Popups;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 
 using MongoDB.Bson;
 
@@ -26,6 +27,11 @@ public partial class ListOfItensPageViewModel : ObservableObject
     public ListOfItensPageViewModel()
     {
         ListToBuy = new ListToBuy();
+
+        WeakReferenceMessenger.Default.Register<string>(string.Empty, ((recipient, message) =>
+        {
+            UpdateListToBuy();
+        }));
     }
 
     [RelayCommand]
@@ -81,5 +87,11 @@ public partial class ListOfItensPageViewModel : ObservableObject
         {
             realm.Remove(product);
         });
+    }
+
+    [RelayCommand]
+    private void UpdateListToBuy()
+    {
+        OnPropertyChanged(nameof(ListToBuy));
     }
 }

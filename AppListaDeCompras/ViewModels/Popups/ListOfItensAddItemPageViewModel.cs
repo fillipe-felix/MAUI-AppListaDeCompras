@@ -4,6 +4,7 @@ using AppListaDeCompras.Models.Enums;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 
 using MongoDB.Bson;
 
@@ -67,7 +68,11 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
                 ProductForm.CreatedAt = DateTime.UtcNow;
                 
                 List.Products.Add(ProductForm);
-                realm.Add(List, true);
+                realm.Add(List);
+
+                // Trabalha como Pub Sub
+                //Aqui esta enviando a notificação.
+                WeakReferenceMessenger.Default.Send(string.Empty);
             }
             else
             {

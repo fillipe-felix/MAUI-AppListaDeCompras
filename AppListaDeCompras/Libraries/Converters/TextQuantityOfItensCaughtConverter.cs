@@ -13,7 +13,7 @@ public class TextQuantityOfItensCaughtConverter : IValueConverter
 
         var caughtCount = products.Count(p => p.HasCaught);
 
-        return caughtCount > 0 ? $"{caughtCount} itens" : $"{caughtCount} item";
+        return caughtCount > 1 ? $"{caughtCount} itens" : $"{caughtCount} item";
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

@@ -9,7 +9,7 @@ public class TextQuantityItemOfListConverter : IValueConverter
     {
         var productsCount = (int)value!;
 
-        return productsCount > 0 ? " itens" : " item";
+        return productsCount > 1 ? " itens" : " item";
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
