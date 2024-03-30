@@ -155,3 +155,9 @@ k
 ;AppListaDeCompras/Libraries/Services/MongoDbAtlasService.cs,e\5\e5c0941a04e2ff495a7a44d8fb9a17da453dacf4
 g
 7AppListaDeCompras/Resources/Raw/mongoDbAtlasConfig.json,0\d\0d9aa000e1ef8847c5c4974d21a7cd28c68bba0c
+k
+;AppListaDeCompras/Libraries/Validations/AddItemValidator.cs,9\2\929c22ce83fe531c83b7bf5da03582d7b0476573
+b
+2AppListaDeCompras/Libraries/Utilities/Validator.cs,a\f\af5bd8c373a0b1d24cd3dd6bada7fc1a1cca43b7
+q
+AAppListaDeCompras/Libraries/Converters/ShowIfHaveTextConverter.cs,2\1\21df3755f498406986ee0c6f5d494728461fbee2

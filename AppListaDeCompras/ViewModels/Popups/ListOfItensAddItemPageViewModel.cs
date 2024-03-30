@@ -1,4 +1,6 @@
 ﻿using AppListaDeCompras.Libraries.Services;
+using AppListaDeCompras.Libraries.Utilities;
+using AppListaDeCompras.Libraries.Validations;
 using AppListaDeCompras.Models;
 using AppListaDeCompras.Models.Enums;
 
@@ -39,12 +41,18 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
     private string[] unitsMeasure;
 
     [ObservableProperty] private ListToBuy _list;
+    
+    [ObservableProperty]
+    private string _errorsMessage;
+
+    private AddItemValidator _validator;
 
     public ListOfItensAddItemPageViewModel()
     {
         unitsMeasure = Enum.GetNames(typeof(UnitMeasure));
         Product = new Product();
         ProductForm = new Product();
+        _validator = App.Current.MainPage.Handler.MauiContext.Services.GetRequiredService<AddItemValidator>();
     }
     
     [RelayCommand]
@@ -56,7 +64,14 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
     [RelayCommand]
     private async Task Save()
     {
-        //TODO - Validar os dados
+        ErrorsMessage = string.Empty;
+        var validateResult = _validator.Validate(ProductForm!);
+        
+        if (!validateResult.IsValid)
+        {
+            ErrorsMessage = Validator.ShowErrorMessage(validateResult);
+            return;
+        }
         
         var realm = MongoDbAtlasService.GetMainThreadRealm();
 
