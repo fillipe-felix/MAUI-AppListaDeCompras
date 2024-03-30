@@ -4,6 +4,9 @@ using AppListaDeCompras.Models;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+
+using MongoDB.Bson;
 
 using Email = AppListaDeCompras.Libraries.Utilities.Email;
 
@@ -11,44 +14,63 @@ namespace AppListaDeCompras.ViewModels;
 
 public partial class ProfilePageViewModel : ObservableObject
 {
-    [ObservableProperty] private User user;
+    [ObservableProperty] private string _textUserLogged;
+    [ObservableProperty] private bool _isLogged;
+    [ObservableProperty] private User _user;
 
     public ProfilePageViewModel()
     {
-        user = new User();
+        _user = new User(); 
+
+        GetLoggedUserMessage();
+        
+        WeakReferenceMessenger.Default.Register(string.Empty, (object obj, string str) =>
+        {
+            GetLoggedUserMessage();
+        });
+    }
+
+    private void GetLoggedUserMessage()
+    {
+        IsLogged = UserLoggedManager.ExistsUser();
+
+        if (IsLogged)
+        {
+            var user = UserLoggedManager.GetUser();
+            TextUserLogged = $"Usuário logado! {user.Name} ({user.Email})";
+        }
     }
 
     [RelayCommand]
     private async Task NavigateToAccessCodePage()
     {
-        //TODO - Validar dados
-        
-        
-        
         var realm = MongoDbAtlasService.GetMainThreadRealm();
-        var userDb = realm.All<User>().FirstOrDefault(u => u.Email.Equals(user.Email, StringComparison.OrdinalIgnoreCase));
+        var userDb = realm.All<User>().FirstOrDefault(u => u.Email.Equals(_user.Email, StringComparison.OrdinalIgnoreCase));
 
-        User.AccessCodeTemp = Text.GerarNumeroAleatorio().ToString();
-        User.AccessCodeCreatedAt = DateTime.UtcNow;
-        
+       
         if (userDb is null)
         {
-            //TODO - Enviar o accessCode por email.
-            
             await realm.WriteAsync(() =>
             {
-                realm.Add(user);
+                User.AccessCodeTemp = Text.GerarNumeroAleatorio().ToString();
+                User.AccessCodeCreatedAt = DateTime.UtcNow;
+                User.CreatedAt = DateTime.UtcNow;
+                User.Id = ObjectId.GenerateNewId();
+                realm.Add(_user);
             });
             
             Email.SendMailWithAccessCode(User);
         }
         else
         {
-            //TODO - Enviar o accessCode por email.
-            
             await realm.WriteAsync(() =>
             {
-                realm.Add(user, true);
+                User.Id = userDb.Id;
+                User.CreatedAt = userDb.CreatedAt;
+                User.Name = userDb.Name;
+                User.AccessCodeTemp = Text.GerarNumeroAleatorio().ToString();
+                User.AccessCodeCreatedAt = DateTime.UtcNow;
+                realm.Add(User, update: true);
             });
             
             Email.SendMailWithAccessCode(User);
@@ -56,7 +78,14 @@ public partial class ProfilePageViewModel : ObservableObject
         
 
         var parameters = new Dictionary<string, object>();
-        parameters.Add("usuario", user);
+        parameters.Add("usuario", _user);
         await Shell.Current.GoToAsync("//Profile/AccessCode", parameters);
+    }
+
+    [RelayCommand]
+    private void Logout()
+    {
+        UserLoggedManager.RemoveUser();
+        IsLogged = false;
     }
 }

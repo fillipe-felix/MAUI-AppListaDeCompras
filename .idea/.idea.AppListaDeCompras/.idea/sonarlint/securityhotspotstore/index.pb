@@ -165,3 +165,5 @@ AAppListaDeCompras/Libraries/Converters/ShowIfHaveTextConverter.cs,2\1\21df3755
 -AppListaDeCompras/Libraries/Utilities/Text.cs,9\b\9bda27e0dfa89ddf638963f6d401c3e8644aa5a4
 ^
 .AppListaDeCompras/Libraries/Utilities/Email.cs,9\a\9aee172fdbfaf2841865ec0ced610e076f074b2b
+j
+:AppListaDeCompras/Libraries/Utilities/UserLoggedManager.cs,b\8\b8fd57d7e995f7490b69b8e67ce5db4bd893b63c

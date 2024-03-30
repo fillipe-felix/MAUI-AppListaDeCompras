@@ -15,7 +15,7 @@
             <Image
                 HeightRequest="{OnPlatform Default=330,
                                            Android=290}"
-                SemanticProperties.Description="Carrinho cheio de produtos"
+                SemanticProperties.Description="Carrinho de um cadeado"
                 Source="image_password.png" />
             <Label
                 SemanticProperties.HeadingLevel="Level1"
@@ -29,9 +29,10 @@
 
             <Entry
                 Placeholder="Código de acesso"
-                Text="{Binding User.AccessCodeTemp}"
+                Text="{Binding AccessCode}"
                 VerticalOptions="EndAndExpand" />
             <Button
+                Command="{Binding VerifyAccessCodeCommand}"
                 SemanticProperties.Description="Acessa a próxima tela do app, tela de cadastro de lista de compras"
                 SemanticProperties.Hint="Confirmar"
                 Text="Confirmar" />
