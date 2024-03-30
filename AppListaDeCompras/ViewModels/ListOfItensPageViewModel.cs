@@ -1,4 +1,5 @@
 ﻿using AppListaDeCompras.Libraries.Services;
+using AppListaDeCompras.Libraries.Utilities;
 using AppListaDeCompras.Models;
 using AppListaDeCompras.Views.Popups;
 
@@ -62,6 +63,21 @@ public partial class ListOfItensPageViewModel : ObservableObject
                 ListToBuy.Id = ObjectId.GenerateNewId();
                 ListToBuy.Name = ListToBuyName;
                 ListToBuy.CreatedAt = DateTime.UtcNow;
+                
+                //Mongo -> App Services -> App users (User Anonymous)
+                ListToBuy.AnonymousUserId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
+
+                if (UserLoggedManager.ExistsUser())
+                {
+                    var user = UserLoggedManager.GetUser();
+
+                    var userDb = realm.All<User>().FirstOrDefault(u => u.Id == user.Id);
+
+                    if (userDb is not null)
+                    {
+                        ListToBuy.Users.Add(userDb);
+                    }
+                }
 
                 realm.Add(ListToBuy);
             }
