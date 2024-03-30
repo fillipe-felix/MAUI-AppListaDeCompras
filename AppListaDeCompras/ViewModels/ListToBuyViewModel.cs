@@ -45,9 +45,15 @@ public partial class ListToBuyViewModel : ObservableObject
             var anonymousId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
             ListsOfListToBuy = realm.All<ListToBuy>().Where(a=>a.AnonymousUserId == anonymousId);
         }
-        //_backupListsOfListToBuy = ListsOfListToBuy;
+        _backupListsOfListToBuy = ListsOfListToBuy;
+    }
 
-        //ListsOfListToBuy = realm.All<ListToBuy>();
+    [RelayCommand]
+    private void Search(Entry entry)
+    {
+        string word = string.IsNullOrWhiteSpace(entry.Text) ? "" : entry.Text;
+
+        ListsOfListToBuy = _backupListsOfListToBuy.Where(l => l.Name.Contains(word, StringComparison.OrdinalIgnoreCase));
     }
     
     [RelayCommand]
