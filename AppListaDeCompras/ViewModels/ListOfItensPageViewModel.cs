@@ -65,7 +65,7 @@ public partial class ListOfItensPageViewModel : ObservableObject
                 ListToBuy.CreatedAt = DateTime.UtcNow;
                 
                 //Mongo -> App Services -> App users (User Anonymous)
-                ListToBuy.AnonymousUserId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
+                
 
                 if (UserLoggedManager.ExistsUser())
                 {
@@ -77,6 +77,10 @@ public partial class ListOfItensPageViewModel : ObservableObject
                     {
                         ListToBuy.Users.Add(userDb);
                     }
+                }
+                else
+                {
+                    ListToBuy.AnonymousUserId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
                 }
 
                 realm.Add(ListToBuy);

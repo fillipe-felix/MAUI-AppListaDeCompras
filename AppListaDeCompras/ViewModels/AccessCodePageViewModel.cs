@@ -1,9 +1,12 @@
-﻿using AppListaDeCompras.Libraries.Utilities;
+﻿using AppListaDeCompras.Libraries.Services;
+using AppListaDeCompras.Libraries.Utilities;
 using AppListaDeCompras.Models;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+
+using MongoDB.Bson;
 
 namespace AppListaDeCompras.ViewModels;
 
@@ -33,15 +36,31 @@ public partial class AccessCodePageViewModel : ObservableObject
 
             WeakReferenceMessenger.Default.Send("Logado");
 
+            TransferAllListToBuyAnonymousToUserLogged(User);
+
             await AppShell.Current.GoToAsync("../");
         }
         else
         {
             await App.Current.MainPage.DisplayAlert("Alerta", "Código de acesso inválido!", "Ok");
-
             AccessCode = string.Empty;
-            
             return;
         }
+    }
+    
+    private void TransferAllListToBuyAnonymousToUserLogged(User userLogged)
+    {
+        var realm = MongoDbAtlasService.GetMainThreadRealm();
+        var userLoggedId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
+        var listToBuy = realm.All<ListToBuy>().Where(a => a.AnonymousUserId == userLoggedId).ToList();
+
+        realm.WriteAsync(() =>
+        {
+            foreach (var list in listToBuy)
+            {
+                list.AnonymousUserId = default(ObjectId);
+                list.Users.Add(userLogged);
+            }
+        });
     }
 }
