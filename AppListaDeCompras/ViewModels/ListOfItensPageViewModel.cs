@@ -36,9 +36,9 @@ public partial class ListOfItensPageViewModel : ObservableObject
     {
         ListToBuy = new ListToBuy();
 
-        if (!WeakReferenceMessenger.Default.IsRegistered<string>(string.Empty))
+        if (!WeakReferenceMessenger.Default.IsRegistered<string>("NewItem"))
         {
-            WeakReferenceMessenger.Default.Register<string>(string.Empty, ((recipient, message) =>
+            WeakReferenceMessenger.Default.Register<string>("NewItem", ((recipient, message) =>
             {
                 UpdateListToBuy();
             }));

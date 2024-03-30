@@ -24,9 +24,9 @@ public partial class ProfilePageViewModel : ObservableObject
 
         GetLoggedUserMessage();
 
-        if (!WeakReferenceMessenger.Default.IsRegistered<string>(string.Empty))
+        if (!WeakReferenceMessenger.Default.IsRegistered<string>("Logado"))
         {
-            WeakReferenceMessenger.Default.Register(string.Empty, (object obj, string str) =>
+            WeakReferenceMessenger.Default.Register("Logado", (object obj, string str) =>
             {
                 GetLoggedUserMessage();
             });
@@ -59,7 +59,7 @@ public partial class ProfilePageViewModel : ObservableObject
                 User.AccessCodeCreatedAt = DateTime.UtcNow;
                 User.CreatedAt = DateTime.UtcNow;
                 User.Id = ObjectId.GenerateNewId();
-                realm.Add(_user);
+                realm.Add(User);
             });
             
             Email.SendMailWithAccessCode(User);
@@ -73,7 +73,7 @@ public partial class ProfilePageViewModel : ObservableObject
                 User.Name = userDb.Name;
                 User.AccessCodeTemp = Text.GerarNumeroAleatorio().ToString();
                 User.AccessCodeCreatedAt = DateTime.UtcNow;
-                realm.Add(User, update: true);
+                realm.Add(User, true);
             });
             
             Email.SendMailWithAccessCode(User);
@@ -81,7 +81,7 @@ public partial class ProfilePageViewModel : ObservableObject
         
 
         var parameters = new Dictionary<string, object>();
-        parameters.Add("usuario", _user);
+        parameters.Add("usuario", User);
         await Shell.Current.GoToAsync("//Profile/AccessCode", parameters);
     }
 

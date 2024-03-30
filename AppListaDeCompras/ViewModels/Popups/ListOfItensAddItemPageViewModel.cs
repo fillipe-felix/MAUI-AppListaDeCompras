@@ -87,7 +87,7 @@ public partial class ListOfItensAddItemPageViewModel : ObservableObject
 
                 // Trabalha como Pub Sub
                 //Aqui esta enviando a notificação.
-                WeakReferenceMessenger.Default.Send(string.Empty);
+                WeakReferenceMessenger.Default.Send("NewItem");
             }
             else
             {
