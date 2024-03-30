@@ -161,3 +161,7 @@ b
 2AppListaDeCompras/Libraries/Utilities/Validator.cs,a\f\af5bd8c373a0b1d24cd3dd6bada7fc1a1cca43b7
 q
 AAppListaDeCompras/Libraries/Converters/ShowIfHaveTextConverter.cs,2\1\21df3755f498406986ee0c6f5d494728461fbee2
+]
+-AppListaDeCompras/Libraries/Utilities/Text.cs,9\b\9bda27e0dfa89ddf638963f6d401c3e8644aa5a4
+^
+.AppListaDeCompras/Libraries/Utilities/Email.cs,9\a\9aee172fdbfaf2841865ec0ced610e076f074b2b
