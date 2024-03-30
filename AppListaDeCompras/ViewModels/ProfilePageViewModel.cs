@@ -23,11 +23,14 @@ public partial class ProfilePageViewModel : ObservableObject
         _user = new User(); 
 
         GetLoggedUserMessage();
-        
-        WeakReferenceMessenger.Default.Register(string.Empty, (object obj, string str) =>
+
+        if (!WeakReferenceMessenger.Default.IsRegistered<string>(string.Empty))
         {
-            GetLoggedUserMessage();
-        });
+            WeakReferenceMessenger.Default.Register(string.Empty, (object obj, string str) =>
+            {
+                GetLoggedUserMessage();
+            });
+        }
     }
 
     private void GetLoggedUserMessage()

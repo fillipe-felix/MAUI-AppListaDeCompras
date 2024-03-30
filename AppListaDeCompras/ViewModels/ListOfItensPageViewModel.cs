@@ -35,10 +35,13 @@ public partial class ListOfItensPageViewModel : ObservableObject
     {
         ListToBuy = new ListToBuy();
 
-        WeakReferenceMessenger.Default.Register<string>(string.Empty, ((recipient, message) =>
+        if (!WeakReferenceMessenger.Default.IsRegistered<string>(string.Empty))
         {
-            UpdateListToBuy();
-        }));
+            WeakReferenceMessenger.Default.Register<string>(string.Empty, ((recipient, message) =>
+            {
+                UpdateListToBuy();
+            }));
+        }
     }
 
     [RelayCommand]
