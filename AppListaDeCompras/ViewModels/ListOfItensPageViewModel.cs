@@ -20,9 +20,16 @@ public partial class ListOfItensPageViewModel : ObservableObject
     public ListToBuy? ListToBuy
     {
         get => _listToBuy;
-        set => SetProperty(ref _listToBuy, value);
-        
+        set
+        {
+            ListToBuyName = value.Name;
+            SetProperty(ref _listToBuy, value);
+        }
+
     }
+
+    [ObservableProperty]
+    private string _listToBuyName;
 
     public ListOfItensPageViewModel()
     {
@@ -37,8 +44,9 @@ public partial class ListOfItensPageViewModel : ObservableObject
     [RelayCommand]
     private async Task SaveListToBuy()
     {
-        if (string.IsNullOrWhiteSpace(ListToBuy.Name))
+        if (string.IsNullOrWhiteSpace(ListToBuyName))
         {
+            App.Current.MainPage.DisplayAlert("Validação", "O nome da lista deve ser preenchido", "Ok");
             return;
         }
         
@@ -49,12 +57,14 @@ public partial class ListOfItensPageViewModel : ObservableObject
             if (ListToBuy.Id == default(ObjectId))
             {
                 ListToBuy.Id = ObjectId.GenerateNewId();
+                ListToBuy.Name = ListToBuyName;
                 ListToBuy.CreatedAt = DateTime.UtcNow;
 
                 realm.Add(ListToBuy);
             }
             else
             {
+                ListToBuy.Name = ListToBuyName;
                 realm.Add(ListToBuy, true);
             }
         });

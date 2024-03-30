@@ -37,7 +37,7 @@
                 HorizontalOptions="FillAndExpand"
                 Margin="15,0,0,0"
                 Placeholder="Nome da Lista"
-                Text="{Binding ListToBuy.Name}">
+                Text="{Binding ListToBuyName}">
                 <Entry.Behaviors>
                     <toolkit:EventToCommandBehavior Command="{Binding SaveListToBuyCommand}" EventName="Unfocused" />
                 </Entry.Behaviors>
