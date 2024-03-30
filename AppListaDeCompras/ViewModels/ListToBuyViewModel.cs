@@ -1,12 +1,12 @@
-﻿using System.Collections.ObjectModel;
-
-using AppListaDeCompras.Libraries.Services;
+﻿using AppListaDeCompras.Libraries.Services;
+using AppListaDeCompras.Libraries.Utilities;
 using AppListaDeCompras.Models;
-using AppListaDeCompras.Models.Enums;
 using AppListaDeCompras.Views.Popups;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+
+using MongoDB.Bson;
 
 using Mopups.Services;
 
@@ -18,6 +18,8 @@ public partial class ListToBuyViewModel : ObservableObject
 {
     [ObservableProperty]
     private IQueryable<ListToBuy> _listsOfListToBuy;
+    
+    private IQueryable<ListToBuy> _backupListsOfListToBuy;
 
     public ListToBuyViewModel()
     {
@@ -33,8 +35,19 @@ public partial class ListToBuyViewModel : ObservableObject
         //TODO - carregar os dados
 
         var realm = MongoDbAtlasService.GetMainThreadRealm();
+        
+        if (UserLoggedManager.ExistsUser())
+        {
+            ListsOfListToBuy = realm.All<ListToBuy>().Filter("ANY Users.Id == $0", UserLoggedManager.GetUser().Id);
+        }
+        else
+        {
+            var anonymousId = new ObjectId(MongoDbAtlasService.CurrentUser.Id);
+            ListsOfListToBuy = realm.All<ListToBuy>().Where(a=>a.AnonymousUserId == anonymousId);
+        }
+        //_backupListsOfListToBuy = ListsOfListToBuy;
 
-        ListsOfListToBuy = realm.All<ListToBuy>();
+        //ListsOfListToBuy = realm.All<ListToBuy>();
     }
     
     [RelayCommand]
