@@ -34,25 +34,57 @@
                         Style="{StaticResource SmallHeadline}"
                         Text="Item"
                         VerticalOptions="Center" />
-                    <ImageButton Command="{Binding CloseCommand}" Source="close.png" />
+                    <ImageButton
+                        Command="{Binding CloseCommand}"
+                        Padding="{OnPlatform Default=0,
+                                             Android=5}"
+                        Source="close.png" />
                 </StackLayout>
 
                 <Label
                     IsVisible="{Binding ErrorsMessage, Converter={StaticResource ShowIfHaveTextConverter}}"
                     Text="{Binding ErrorsMessage}"
                     TextColor="Red" />
-                <Entry Placeholder="Nome do item" Text="{Binding ProductForm.Name}" />
-                <StackLayout Orientation="Horizontal" Spacing="10">
+                <Border
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0"
+                    Style="{StaticResource FormBorder}">
                     <Entry
+                        Placeholder="Nome do item"
+                        Text="{Binding ProductForm.Name}"
+                        VerticalOptions="Center" />
+                </Border>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Border
                         HorizontalOptions="FillAndExpand"
-                        Placeholder="Quantidade"
-                        Text="{Binding ProductForm.Quantity}" />
-                    <Picker
+                        Margin="0"
+                        Style="{StaticResource FormBorder}">
+                        <Entry
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Quantidade"
+                            Text="{Binding ProductForm.Quantity}"
+                            VerticalOptions="Center" />
+                    </Border>
+                    <Border
                         HorizontalOptions="FillAndExpand"
-                        ItemsSource="{Binding UnitsMeasure}"
-                        SelectedItem="{Binding ProductForm.QuantityUnitMeasure}" />
+                        Margin="0"
+                        Style="{StaticResource FormBorder}">
+                        <Picker
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding UnitsMeasure}"
+                            SelectedItem="{Binding ProductForm.QuantityUnitMeasure}"
+                            VerticalOptions="Center" />
+                    </Border>
                 </StackLayout>
-                <Entry Placeholder="Preço" Text="{Binding ProductForm.Price}" />
+                <Border
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0"
+                    Style="{StaticResource FormBorder}">
+                    <Entry
+                        Placeholder="Preço"
+                        Text="{Binding ProductForm.Price}"
+                        VerticalOptions="Center" />
+                </Border>
                 <Button Command="{Binding SaveCommand}" Text="Salvar" />
             </VerticalStackLayout>
         </Border>
