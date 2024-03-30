@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
+﻿using AppListaDeCompras.Models;
 
-using AppListaDeCompras.Models;
+using Newtonsoft.Json;
 
 namespace AppListaDeCompras.Libraries.Utilities
 {
@@ -13,7 +13,7 @@ namespace AppListaDeCompras.Libraries.Utilities
             var userAsString = Preferences.Get(_key, null);
             if(userAsString != null)
             {
-                return JsonSerializer.Deserialize<User>(userAsString)!;
+                return JsonConvert.DeserializeObject<User>(userAsString)!;
             }
 
             return null;
@@ -24,7 +24,7 @@ namespace AppListaDeCompras.Libraries.Utilities
 
             var userToJsonSerilizer = new { user.Id, user.Name, user.Email, user.CreatedAt };
             
-            Preferences.Set(_key, JsonSerializer.Serialize(userToJsonSerilizer));
+            Preferences.Set(_key, JsonConvert.SerializeObject(userToJsonSerilizer));
         }
         public static void RemoveUser()
         {

@@ -86,6 +86,7 @@ public partial class ProfilePageViewModel : ObservableObject
     private void Logout()
     {
         UserLoggedManager.RemoveUser();
+        User = new User();
         IsLogged = false;
     }
 }

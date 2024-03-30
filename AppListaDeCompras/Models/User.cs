@@ -1,4 +1,8 @@
-﻿using MongoDB.Bson;
+﻿using AppListaDeCompras.Libraries.Utilities;
+
+using MongoDB.Bson;
+
+using Newtonsoft.Json;
 
 using Realms;
 
@@ -8,6 +12,7 @@ public partial class User : IRealmObject
 {
     [PrimaryKey]
     [MapTo("_id")]
+    [JsonConverter(typeof(ObjectIdConverter))]
     public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
 
     [MapTo("name")]
