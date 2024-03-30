@@ -17,6 +17,9 @@ namespace AppListaDeCompras.ViewModels;
 public partial class ListOfItensPageViewModel : ObservableObject
 {
 
+    [ObservableProperty]
+    private bool _enabledAddProduct;
+    
     private ListToBuy? _listToBuy;
     public ListToBuy? ListToBuy
     {
@@ -25,6 +28,7 @@ public partial class ListOfItensPageViewModel : ObservableObject
         {
             ListToBuyName = value.Name;
             SetProperty(ref _listToBuy, value);
+            EnabledAddProduct = true;
         }
 
     }
@@ -35,6 +39,7 @@ public partial class ListOfItensPageViewModel : ObservableObject
     public ListOfItensPageViewModel()
     {
         ListToBuy = new ListToBuy();
+        EnabledAddProduct = false;
 
         if (!WeakReferenceMessenger.Default.IsRegistered<string>("NewItem"))
         {
@@ -90,6 +95,8 @@ public partial class ListOfItensPageViewModel : ObservableObject
                 ListToBuy.Name = ListToBuyName;
                 realm.Add(ListToBuy, true);
             }
+            
+            EnabledAddProduct = true;
         });
     }
     

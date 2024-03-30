@@ -139,6 +139,7 @@
             Command="{Binding OpenPopupAddItemPageCommand}"
             Grid.Row="2"
             HorizontalOptions="End"
+            IsEnabled="{Binding EnabledAddProduct}"
             Margin="20"
             Style="{StaticResource ButtonTransparent}"
             Text="+"
